@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>RansauSysteme.Utils - .NET Utilities Toolkit</Title>
+    <Authors>RANSAU SYSTEME</Authors>
+    <Company>RANSAU SYSTEME</Company>
+    <Description>A comprehensive collection of utility methods for .NET Core/.NET 8 applications, providing robust solutions for common development tasks.
+
+This library includes:
+- String manipulation utilities (case conversion, formatting, validation)
+- File &amp; directory operations with retry mechanisms
+- JSON serialization helpers
+- Password generation and validation tools
+- Build configuration detection
+- Result pattern implementation for cleaner error handling
+
+The utilities are designed to be lightweight, well-documented, and thoroughly tested to help you build more reliable applications with less code.
+
+Compatible with .NET 8 and above.</Description>
+    <PackageTags>utils,utilities,helpers,extensions,strings,io,filesystem,json,password,result</PackageTags>
+    <PackageIcon>systeme-icon-square.PNG</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\systeme-icon-square.PNG">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RansauSysteme.Database", "RansauSysteme.Database\RansauSysteme.Database.csproj", "{FAEFDC9A-E36D-4191-89DC-195DC6716D2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RansauSysteme.Utils", "RansauSysteme.Utils\RansauSysteme.Utils.csproj", "{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAEFDC9A-E36D-4191-89DC-195DC6716D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAEFDC9A-E36D-4191-89DC-195DC6716D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAEFDC9A-E36D-4191-89DC-195DC6716D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAEFDC9A-E36D-4191-89DC-195DC6716D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D4DF12E-A58E-4E32-B3B0-B446C0173E5A}
+	EndGlobalSection
+EndGlobal

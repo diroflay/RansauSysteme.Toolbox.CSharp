@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>RANSAU SYSTEME</Authors>
+    <Company>RANSAU SYSTEME</Company>
+    <Description>A flexible .NET data access library implementing the Repository pattern for database operations. Features include:
+
+- Generic repository implementation with full CRUD operations
+- Support for MySQL databases with extensible design for other providers
+- Both synchronous and asynchronous API
+- Efficient batch operations with transaction support
+- Built-in caching repository with configurable refresh intervals
+- Factory pattern for creating repositories with dependency injection support
+- Comprehensive error handling with custom exceptions
+- Thread-safe implementation for concurrent applications
+
+Designed for developers who want a clean, maintainable approach to database access in .NET applications.</Description>
+    <PackageTags>database repository dapper mysql orm data-access caching</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>systeme-icon-square.PNG</PackageIcon>
+    <Title>RansauSysteme.Database - .NET Database Toolkit</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\systeme-icon-square.PNG">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+    <PackageReference Include="MySql.Data" Version="9.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RansauSysteme.Utils\RansauSysteme.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="systeme-icon-square.PNG">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
