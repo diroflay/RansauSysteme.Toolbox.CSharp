@@ -30,8 +30,7 @@ namespace RansauSysteme.Database.Repository
         {
             DatabaseConnection = databaseConnection ?? throw new ArgumentNullException(nameof(databaseConnection));
 
-            //Ensure Logs entity does not send log online
-            Logger = null;
+            Logger = logger;
 
             MaxBatchSize = 1000;
 

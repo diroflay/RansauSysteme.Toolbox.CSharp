@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	  <Version>1.1.0</Version>
     <Authors>RANSAU SYSTEME</Authors>
     <Company>RANSAU SYSTEME</Company>
     <Description>A flexible .NET data access library implementing the Repository pattern for database operations. Features include:
@@ -19,7 +20,7 @@
 - Thread-safe implementation for concurrent applications
 
 Designed for developers who want a clean, maintainable approach to database access in .NET applications.</Description>
-    <PackageTags>database repository dapper mysql orm data-access caching</PackageTags>
+    <PackageTags>database;repository;dapper;mysql;orm;data-access;caching</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>systeme-icon-square.PNG</PackageIcon>
     <Title>RansauSysteme.Database - .NET Database Toolkit</Title>

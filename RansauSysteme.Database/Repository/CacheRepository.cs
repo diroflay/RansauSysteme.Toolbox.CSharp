@@ -14,7 +14,8 @@ namespace RansauSysteme.Database.Repository
         private DateTime _lastRefresh;
         private volatile bool _isCacheInitialized;
 
-        public CacheRepository(IDatabaseConnection databaseConnection, TimeSpan? refreshInterval = null, bool periodicRefresh = false) : base(databaseConnection)
+        public CacheRepository(IDatabaseConnection databaseConnection, TimeSpan? refreshInterval = null,
+            bool periodicRefresh = false, ILogger? logger = null) : base(databaseConnection, logger)
         {
             // Adding some cache logics so if needed the data are still in memory for a period
             _cache = new ConcurrentDictionary<int, T>();

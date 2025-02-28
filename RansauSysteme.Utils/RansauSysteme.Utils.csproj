@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<Version>1.0.0</Version>
     <Title>RansauSysteme.Utils - .NET Utilities Toolkit</Title>
     <Authors>RANSAU SYSTEME</Authors>
     <Company>RANSAU SYSTEME</Company>
@@ -20,7 +21,7 @@ This library includes:
 The utilities are designed to be lightweight, well-documented, and thoroughly tested to help you build more reliable applications with less code.
 
 Compatible with .NET 8 and above.</Description>
-    <PackageTags>utils,utilities,helpers,extensions,strings,io,filesystem,json,password,result</PackageTags>
+    <PackageTags>utils;utilities;helpers;extensions;,strings;io;filesystem;json;password;result</PackageTags>
     <PackageIcon>systeme-icon-square.PNG</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
