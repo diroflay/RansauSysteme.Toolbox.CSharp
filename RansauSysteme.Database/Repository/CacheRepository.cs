@@ -11,8 +11,8 @@ namespace RansauSysteme.Database.Repository
 
         private readonly SemaphoreSlim _cacheLock;
         private readonly TimeSpan? _refreshInterval;
-        private DateTime _lastRefresh;
-        private volatile bool _isCacheInitialized;
+        protected DateTime _lastRefresh;
+        protected volatile bool _isCacheInitialized;
 
         public CacheRepository(IDatabaseConnection databaseConnection, TimeSpan? refreshInterval = null,
             bool periodicRefresh = false, ILogger? logger = null) : base(databaseConnection, logger)
@@ -218,7 +218,7 @@ namespace RansauSysteme.Database.Repository
             return _cache.Values;
         }
 
-        public void RefreshCache()
+        protected void RefreshCache()
         {
             try
             {
@@ -246,7 +246,7 @@ namespace RansauSysteme.Database.Repository
             }
         }
 
-        public async Task RefreshCacheAsync()
+        protected async Task RefreshCacheAsync()
         {
             try
             {
@@ -290,7 +290,7 @@ namespace RansauSysteme.Database.Repository
             _lastRefresh = DateTime.MinValue;
         }
 
-        private bool ShouldRefresh()
+        protected bool ShouldRefresh()
         {
             if (IsUsingCache())
             {
