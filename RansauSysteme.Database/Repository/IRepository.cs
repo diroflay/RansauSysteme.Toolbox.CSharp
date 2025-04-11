@@ -93,18 +93,18 @@
         /// <summary>
         /// Deletes an entity from the repository by its identifier.
         /// </summary>
-        /// <param name="id">The unique identifier of the entity to delete.</param>
+        /// <param name="entity">The entity to delete.</param>
         /// <returns>True if the entity was deleted successfully; otherwise, false.</returns>
         /// <remarks>
         /// Returns false if no entity with the specified ID exists in the repository.
         /// </remarks>
         /// <exception cref="RepositoryException">Thrown when an error occurs during the delete operation.</exception>
-        public bool Delete(int id);
+        public bool Delete(T entity);
 
         /// <summary>
         /// Deletes multiple entities from the repository by their identifiers as a single transaction.
         /// </summary>
-        /// <param name="ids">The collection of unique identifiers to delete.</param>
+        /// <param name="entities">The collection of entities to delete.</param>
         /// <returns>True if all entities were deleted successfully; otherwise, false.</returns>
         /// <remarks>
         /// This operation is transactional. If any entity fails to be deleted,
@@ -112,7 +112,7 @@
         /// Returns false if any of the specified IDs do not exist in the repository.
         /// </remarks>
         /// <exception cref="RepositoryException">Thrown when an error occurs during the delete operation.</exception>
-        public bool Delete(IEnumerable<int> ids);
+        public bool Delete(IEnumerable<T> entities);
 
         /// <summary>
         /// Determines whether an entity with the specified identifier exists in the repository.
@@ -208,18 +208,18 @@
         /// <summary>
         /// Asynchronously deletes an entity from the repository by its identifier.
         /// </summary>
-        /// <param name="id">The unique identifier of the entity to delete.</param>
+        /// <param name="entity">The entity to delete.</param>
         /// <returns>A task representing the asynchronous operation. The task result indicates whether the entity was deleted successfully.</returns>
         /// <remarks>
         /// Returns false if no entity with the specified ID exists in the repository.
         /// </remarks>
         /// <exception cref="RepositoryException">Thrown when an error occurs during the delete operation.</exception>
-        public Task<bool> DeleteAsync(int id);
+        public Task<bool> DeleteAsync(T entity);
 
         /// <summary>
         /// Asynchronously deletes multiple entities from the repository by their identifiers as a single transaction.
         /// </summary>
-        /// <param name="ids">The collection of unique identifiers to delete.</param>
+        /// <param name="entities">The collection of entities to delete.</param>
         /// <returns>A task representing the asynchronous operation. The task result indicates whether all entities were deleted successfully.</returns>
         /// <remarks>
         /// This operation is transactional. If any entity fails to be deleted,
@@ -227,7 +227,7 @@
         /// Returns false if any of the specified IDs do not exist in the repository.
         /// </remarks>
         /// <exception cref="RepositoryException">Thrown when an error occurs during the delete operation.</exception>
-        public Task<bool> DeleteAsync(IEnumerable<int> ids);
+        public Task<bool> DeleteAsync(IEnumerable<T> entities);
 
         /// <summary>
         /// Asynchronously determines whether an entity with the specified identifier exists in the repository.

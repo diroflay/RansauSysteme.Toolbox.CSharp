@@ -140,30 +140,30 @@ namespace RansauSysteme.Database.Repository
         //**************
         // Delete Methods
         //***************
-        public override bool Delete(int id)
+        public override bool Delete(T entity)
         {
-            var result = base.Delete(id);
+            var result = base.Delete(entity);
             if (IsUsingCache()) { InvalidateCache(); }
             return result;
         }
 
-        public override bool Delete(IEnumerable<int> ids)
+        public override bool Delete(IEnumerable<T> entities)
         {
-            var result = base.Delete(ids);
+            var result = base.Delete(entities);
             if (IsUsingCache()) { InvalidateCache(); }
             return result;
         }
 
-        public override async Task<bool> DeleteAsync(int id)
+        public override async Task<bool> DeleteAsync(T entity)
         {
-            var result = await base.DeleteAsync(id);
+            var result = await base.DeleteAsync(entity);
             if (IsUsingCache()) { InvalidateCache(); }
             return result;
         }
 
-        public override async Task<bool> DeleteAsync(IEnumerable<int> ids)
+        public override async Task<bool> DeleteAsync(IEnumerable<T> entities)
         {
-            var result = await base.DeleteAsync(ids);
+            var result = await base.DeleteAsync(entities);
             if (IsUsingCache()) { InvalidateCache(); }
             return result;
         }

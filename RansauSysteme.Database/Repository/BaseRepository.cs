@@ -224,19 +224,19 @@ namespace RansauSysteme.Database.Repository
             }
         }
 
-        public virtual bool Delete(int id)
+        public virtual bool Delete(T entity)
         {
             try
             {
                 using var connection = DatabaseConnection.CreateConnection();
-                var query = $"DELETE FROM {TableName} WHERE {KeyPropertyName.ToSnakeCase()} = @Id";
+                var query = $"DELETE FROM {TableName} WHERE {KeyPropertyName.ToSnakeCase()} = @{KeyPropertyName}";
 
-                var rowsAffected = connection.Execute(query, new { Id = id });
+                var rowsAffected = connection.Execute(query, entity);
 
                 if (rowsAffected == 0)
                 {
                     Logger?.LogWarning("Attempted to delete non-existent entity with ID {Id} from {Table}",
-                        id, TableName);
+                        GetKeyValue(entity), TableName);
                     return false;
                 }
 
@@ -244,12 +244,12 @@ namespace RansauSysteme.Database.Repository
             }
             catch (Exception ex)
             {
-                Logger?.LogError(ex, "Error deleting entity with ID {Id} from {Table}", id, TableName);
+                Logger?.LogError(ex, "Error deleting entity with ID {Id} from {Table}", GetKeyValue(entity), TableName);
                 throw new RepositoryException($"Failed to delete entity from {TableName}", ex);
             }
         }
 
-        public virtual bool Delete(IEnumerable<int> ids)
+        public virtual bool Delete(IEnumerable<T> entities)
         {
             try
             {
@@ -258,11 +258,10 @@ namespace RansauSysteme.Database.Repository
 
                 try
                 {
-                    var parameters = new DynamicParameters();
-                    parameters.Add("@Ids", ids);
+                    var ids = entities.Select(GetKeyValue);
 
                     var query = $"DELETE FROM {TableName} WHERE {KeyPropertyName.ToSnakeCase()} IN @Ids";
-                    var rowsAffected = connection.Execute(query, parameters, transaction);
+                    var rowsAffected = connection.Execute(query, new { Ids = ids }, transaction);
 
                     if (rowsAffected != ids.Count())
                     {
@@ -530,19 +529,19 @@ namespace RansauSysteme.Database.Repository
             }
         }
 
-        public virtual async Task<bool> DeleteAsync(int id)
+        public virtual async Task<bool> DeleteAsync(T entity)
         {
             try
             {
                 using var connection = DatabaseConnection.CreateConnection();
                 var query = $"DELETE FROM {TableName} WHERE {KeyPropertyName.ToSnakeCase()} = @{KeyPropertyName}";
 
-                var rowsAffected = await connection.ExecuteAsync(query, new { Id = id });
+                var rowsAffected = await connection.ExecuteAsync(query, entity);
 
                 if (rowsAffected == 0)
                 {
                     Logger?.LogWarning("Attempted to delete non-existent entity with ID {Id} from {Table}",
-                        id, TableName);
+                        GetKeyValue(entity), TableName);
                     return false;
                 }
 
@@ -550,18 +549,18 @@ namespace RansauSysteme.Database.Repository
             }
             catch (Exception ex)
             {
-                Logger?.LogError(ex, "Error deleting entity with ID {Id} from {Table}", id, TableName);
+                Logger?.LogError(ex, "Error deleting entity with ID {Id} from {Table}", GetKeyValue(entity), TableName);
                 throw new RepositoryException($"Failed to delete entity from {TableName}", ex);
             }
         }
 
-        public virtual async Task<bool> DeleteAsync(IEnumerable<int> ids)
+        public virtual async Task<bool> DeleteAsync(IEnumerable<T> entities)
         {
-            var idList = ids.ToList();
-            if (!idList.Any()) return true;
-
             try
             {
+                var idList = entities.Select(GetKeyValue);
+                if (!idList.Any()) return true;
+
                 using var connection = DatabaseConnection.CreateConnection();
                 using var transaction = connection.BeginTransaction();
 
@@ -598,7 +597,7 @@ namespace RansauSysteme.Database.Repository
             }
             catch (Exception ex)
             {
-                Logger?.LogError(ex, "Error performing batch delete of {Count} entities", idList.Count);
+                Logger?.LogError(ex, "Error performing batch delete of {Count} entities", entities.Count());
                 throw new RepositoryException("Failed to perform batch delete", ex);
             }
         }
