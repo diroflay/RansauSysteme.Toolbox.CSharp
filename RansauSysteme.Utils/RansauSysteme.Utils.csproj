@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<Version>1.1.0</Version>
+	<Version>1.2.0</Version>
     <Title>RansauSysteme.Utils - .NET Utilities Toolkit</Title>
     <Authors>RANSAU SYSTEME</Authors>
     <Company>RANSAU SYSTEME</Company>

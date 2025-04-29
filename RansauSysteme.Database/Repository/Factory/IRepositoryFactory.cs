@@ -1,6 +1,4 @@
-﻿using RansauSysteme.Database.Repository;
-
-namespace RansauSysteme.Database.Repository.Factory
+﻿namespace RansauSysteme.Database.Repository.Factory
 {
     public interface IRepositoryFactory
     {

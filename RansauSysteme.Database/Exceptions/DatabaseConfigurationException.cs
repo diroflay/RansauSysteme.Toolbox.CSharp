@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RansauSysteme.Database.Exceptions
+﻿namespace RansauSysteme.Database.Exceptions
 {
     public class DatabaseConfigurationException : Exception
     {

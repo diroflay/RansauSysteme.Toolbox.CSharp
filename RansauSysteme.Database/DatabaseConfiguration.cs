@@ -1,7 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using RansauSysteme.Database.Exceptions;
-
-namespace RansauSysteme.Database
+﻿namespace RansauSysteme.Database
 {
     /// <summary>
     /// Represents the configuration settings for a database connection.
