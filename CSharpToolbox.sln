@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RansauSysteme.Database", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RansauSysteme.Utils", "RansauSysteme.Utils\RansauSysteme.Utils.csproj", "{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RansauSysteme.Avalonia", "RansauSysteme.Avalonia\RansauSysteme.Avalonia.csproj", "{6329FBF3-79C6-4EAE-A686-E9A8FA4C0938}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EAA5926-EDA4-439E-A43C-DCEEC10825D6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6329FBF3-79C6-4EAE-A686-E9A8FA4C0938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6329FBF3-79C6-4EAE-A686-E9A8FA4C0938}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6329FBF3-79C6-4EAE-A686-E9A8FA4C0938}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6329FBF3-79C6-4EAE-A686-E9A8FA4C0938}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

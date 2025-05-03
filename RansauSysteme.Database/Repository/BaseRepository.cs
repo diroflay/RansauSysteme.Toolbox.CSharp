@@ -558,23 +558,27 @@ namespace RansauSysteme.Database.Repository
         {
             try
             {
-                var idList = entities.Select(GetKeyValue);
-                if (!idList.Any()) return true;
+                var entityList = entities.ToList();
+                if (entityList.Count == 0)
+                    return true;
 
                 using var connection = DatabaseConnection.CreateConnection();
                 using var transaction = connection.BeginTransaction();
 
                 try
                 {
-                    foreach (var batch in idList.Chunk(MaxBatchSize))
+                    foreach (var batch in entityList.Chunk(MaxBatchSize))
                     {
                         var parameters = new DynamicParameters();
-                        var paramNames = batch.Select(id =>
+                        var paramNames = new List<string>();
+
+                        foreach (var entity in batch)
                         {
+                            var id = GetKeyValue(entity);
                             var paramName = $"p_{Guid.NewGuid():N}";
                             parameters.Add(paramName, id);
-                            return $"@{paramName}";
-                        });
+                            paramNames.Add($"@{paramName}");
+                        }
 
                         var query = $"DELETE FROM {TableName} WHERE {KeyPropertyName.ToSnakeCase()} IN ({string.Join(",", paramNames)})";
                         var rowsAffected = await connection.ExecuteAsync(query, parameters, transaction);
